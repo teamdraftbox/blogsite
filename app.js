@@ -4,7 +4,7 @@ var express = require("express"),
     override = require("method-override"),
     app = express()
     app.use(bodyParser.urlencoded({ extended: true }))
-    mongoose.connect("mongodb://localhost/blogsite")
+    mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/blogsite")
     app.set("view engine","ejs")
     app.use(express.static("public")) 
     app.use(override('_method'))
