@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+<div class= "ui main text container segment space"style="margin:100px;">
+    <div class = "ui huge header"><%=id.title%></div>
+    <div class="ui top attached segment">
+        <div class="item">
+              <img class = "ui centered fluid rounded image" src= "<%= id.image%>">
+        </div>
+    
+            <p>created <%= id.posted.toDateString()%></p>
+        
+         <div class="description">
+           <p><%= id.discription%></p>
+        </div>
+    </div>
+  
+    <form action="/blog/<%=id._id%>?_method=delete" method = "post">
+        <button class = "ui secondary button">Delete</button>
+         <button class= "ui secondary button"><a href = "/blog/<%=id._id%>/edit">Update</a></button>
+    </form>
+   
+
+    
+</div>
+
+
+<% include ./partials/footer %>

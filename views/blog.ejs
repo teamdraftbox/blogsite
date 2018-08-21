@@ -1,0 +1,27 @@
+<% include partials/header%>
+<div style = "margin-top:20px">
+    <h1>The Blog Page</h1>
+<div class="ui items  segment" style="width:70%;margin-left:200px;">
+   <% blog.forEach(function(blog){ %>
+  
+   <div class="item">
+        <div class="image">
+          <img src="<%= blog.image%>">
+        </div>
+      <div class="content">
+            <a class="header"><%= blog.title%></a>
+            <div class="meta">
+           <span>Description</span>
+           </div>
+          <div class="description">
+         <p><%= blog.discription.substring(0,100)%></p>
+          </div>
+          <button class="ui secondary button"><a href = "/blog/<%=blog._id %>">More Info</a></button>
+       </div>
+  </div>
+ 
+       
+  <%  }) %>
+</div>
+
+<% include  partials/footer%>
